@@ -9,6 +9,7 @@ const io = new Server(server, {
 const fs = require("node:fs/promises");
 const { localsName } = require('ejs');
 const { callbackify } = require('util');
+const path = require('path');
 app.set("view engine", "ejs");
 
 // Require static assets from public folder
