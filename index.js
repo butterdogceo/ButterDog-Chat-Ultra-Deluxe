@@ -12,7 +12,7 @@ const { callbackify } = require('util');
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-  res.render("chat.ejs")
+  res.render("chat")
 });
 
 const replacements = {
