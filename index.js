@@ -9,7 +9,11 @@ const io = new Server(server, {
 const fs = require("node:fs/promises");
 const { localsName } = require('ejs');
 const { callbackify } = require('util');
-app.set("view engine", "ejs");
+
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => {
   res.render("chat")
