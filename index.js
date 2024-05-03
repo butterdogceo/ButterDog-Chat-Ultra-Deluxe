@@ -12,6 +12,8 @@ const { callbackify } = require('util');
 const path = require('path');
 app.set("view engine", "ejs");
 
+console.log(path.get());
+
 // Require static assets from public folder
 app.use(express.static(path.join('/', 'public')));
 
