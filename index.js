@@ -12,8 +12,7 @@ const { callbackify } = require('util');
 
 app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
-app.use(express.static(path.join('./', 'public')));
-app.set('views', path.join('./', 'views'));
+app.set('views', 'views');
 
 app.get('/', (req, res) => {
   res.render("chat")
