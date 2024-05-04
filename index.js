@@ -9,22 +9,9 @@ const io = new Server(server, {
 const fs = require("node:fs/promises");
 const { localsName } = require('ejs');
 const { callbackify } = require('util');
-const path = require('path');
 app.set("view engine", "ejs");
 
-// Require static assets from public folder
-app.use(express.static(path.join('/', 'public')));
-
-// Set 'views' directory for any views 
-// being rendered res.render()
-app.set('views', path.join('/', 'views'));
-
-// Set view engine as EJS
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-
 app.get('/', (req, res) => {
-  console.log(req.originalUrl);
   res.render("chat")
 });
 
